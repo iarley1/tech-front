@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { iContact } from "./contactSchema";
 
 export const loginSchema = z.object({
     email: z.string().email("Deve ser um email").nonempty("O email é obrigatiório"),
@@ -16,3 +17,13 @@ export const registerSchema = z.object({
 
 export type iLoginUser = z.infer<typeof loginSchema>
 export type iRegisterUser = z.infer<typeof registerSchema>
+
+export interface iUser {
+    contacts: iContact[]
+    createdAt: string
+    deletedAt: string | null
+    email: string
+    id: number
+    name: string
+    phoneNumber: string
+}

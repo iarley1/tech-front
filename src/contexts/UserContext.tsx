@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { iLoginUser, iRegisterUser } from "../schemas/userSchema"
+import { iLoginUser, iRegisterUser, iUser } from "../schemas/userSchema"
 import { api } from "../api/api"
 import { AxiosError } from "axios"
 import { iContact, iRegisterContact, iUpdateContact } from "../schemas/contactSchema"
 
 interface iUserContext{
-    user: any;
+    user: iUser | null
     loginUser: (data: iLoginUser) => void
     registerUser: (data: iRegisterUser) => void
     loading: boolean

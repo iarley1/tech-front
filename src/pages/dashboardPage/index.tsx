@@ -9,6 +9,8 @@ import { ModalUpdate } from "../../components/modals/ModalUpdateContact"
 export const DashboardPage = () => {
     const { user, showModalAdd, showModalUpdate, openModal } = useContext(UserContext)
 
+    console.log(user)
+
     return(
         <StyleDashboardPage>
             <Header />
@@ -17,9 +19,9 @@ export const DashboardPage = () => {
                 <h2>Contatos</h2>
                 <button onClick={() => openModal("add")}>+</button>
             </div>
-            { user.contacts.length === 0 ? <h3 className="no_contact">Nenhum contato castrado</h3> : <ul>
-                { user.contacts.map( (contact: any, index: number) => <CardContact key={index} contact={contact}/> ) }
-            </ul> }
+            { user!.contacts && user!.contacts.length === 0 ? <h3 className="no_contact">Nenhum contato castrado</h3> : <ul>
+                { user!.contacts && user!.contacts.map( (contact: any, index: number) => <CardContact key={index} contact={contact}/> ) }
+            </ul> } 
             { showModalAdd && <AddModal />  }
             { showModalUpdate && <ModalUpdate />  }
         </StyleDashboardPage> 

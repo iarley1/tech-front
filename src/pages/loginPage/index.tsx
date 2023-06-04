@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FormLogin } from "../../components/FormLogin";
 import { UserContext } from "../../contexts/UserContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { StyleLoginPage } from "./styles";
 
 export function LoginPage () {

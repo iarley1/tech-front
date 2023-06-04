@@ -8,7 +8,7 @@ export const Header = () => {
     return (
         <StyleHeader>
             <div>
-                <h1>Olá, {user.name}</h1>
+                <h1>Olá, {user!.name}</h1>
                 <button onClick={logout} type="button">Sair</button>
             </div>
         </StyleHeader>
