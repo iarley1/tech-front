@@ -9,8 +9,6 @@ import { ModalUpdate } from "../../components/modals/ModalUpdateContact"
 export const DashboardPage = () => {
     const { user, showModalAdd, showModalUpdate, openModal } = useContext(UserContext)
 
-    console.log(user)
-
     return(
         <StyleDashboardPage>
             <Header />
